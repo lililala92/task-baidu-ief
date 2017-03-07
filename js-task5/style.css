@@ -1,0 +1,11 @@
+ul{
+	height:120px;
+	vertical-align: bottom;
+}
+li{
+			background-color: red;
+			display: inline-block;
+			list-style: none;
+			width:15px;
+			margin-left:10px;
+		}
