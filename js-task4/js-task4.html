@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js-task4</title>
+	<style type="text/css">
+		li{
+			background-color: red;
+			float:left;
+			list-style: none;
+			width:30px;
+			height: 20px;
+			text-align: center;
+			padding:10px;
+			margin-left:10px;
+		}
+	</style>	
+	<script type="text/javascript">	
+	    	
+        window.onload=function(){
+        	var lpush=document.getElementById("left-push");
+			var lpull=document.getElementById("left-pull");
+	        var rpush=document.getElementById("right-push");
+	        var rpull=document.getElementById("right-pull");	       
+        	lpush.onclick=function(){
+                leftInsert();          
+            }
+            rpush.onclick=function(){
+                rightInsert();          
+            }
+            lpull.onclick=function(){
+                leftDelete();          
+            }
+            rpull.onclick=function(){
+                rightDelete();          
+            }
+        }
+        function setLiID(newID,oldID)
+        {
+            var oldLi=document.getElementById(oldID);
+            oldLi.id=newID;
+            alert(oldLi.id);
+        }
+        function leftInsert(){
+        	var input=document.getElementById("input-text");
+        	var ul=document.getElementById("List");
+            var insertLi=document.createElement("li");
+            if (input.value=="") {alert("输入值不能为空!")}
+            else{
+            	insertLi.innerHTML=input.value;
+               if(ul.firstChild==null){                                 
+                   ul.appendChild(insertLi);                 
+                 }
+                else{
+                   ul.insertBefore(insertLi,ul.firstChild);             
+                }
+            }
+            
+        }
+        function rightInsert(){
+        	var input=document.getElementById("input-text");
+        	var ul=document.getElementById("List");
+            var insertLi=document.createElement("li");
+            if (input.value=="") {alert("输入值不能为空!")}
+            else{
+	            insertLi.innerHTML=input.value;
+	            if(ul.lastChild==null){                                 
+	                 ul.appendChild(insertLi);                 
+	            }
+	            else{
+	                ul.insertBefore(insertLi,ul.lastChild);             
+	            }
+	        }
+        }
+        function leftDelete(){
+        	var ul=document.getElementById("List");
+        	if(ul.firstChild!=null){ul.removeChild(ul.firstChild); }
+        }
+        function rightDelete(){
+        	var ul=document.getElementById("List");
+        	if(ul.lastChild!=null){ul.removeChild(ul.lastChild); }
+        }
+	</script>
+</head>
+<body>
+ <input type="text" id="input-text">
+ <button id="left-push">左侧入</button>
+ <button id="right-push">右侧入</button>
+ <button id="left-pull">左侧出</button>
+ <button id="right-pull">右侧出</button>
+ <ul id="List">
+ 	<li >1</li>
+ </ul>
+
+</body>
+</html>
