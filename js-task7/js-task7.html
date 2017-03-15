@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js-task7</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.borders{
+			border: 1px solid black;
+			float: left;
+			margin:20px;
+		}
+		.last-cld{
+			width: 50px;
+			height:50px;
+
+		}
+
+	</style>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+<div class="borders" id="root"><!-- 根节点 -->
+    <div class="borders"> <!-- 第一层左孩子 -->
+	       <div class="borders">
+	           <div class="borders last-cld">             
+	           </div>     
+	            <div class="borders last-cld">             
+	           </div>          
+	       </div> 
+	        <div class="borders"> 
+	            <div class="borders last-cld">             
+	           </div>     
+	            <div class="borders last-cld">             
+	           </div>              
+	       </div>     
+    </div>
+    <div class="borders"><!-- 第一层右孩子 -->
+	      <div class="borders">    
+	           <div class="borders last-cld">             
+	           </div>     
+	           <div class="borders last-cld">             
+	           </div>           
+	      </div> 
+	      <div class="borders">  
+	           <div class="borders last-cld">             
+	           </div>     
+	           <div class="borders last-cld">             
+	           </div>             
+	      </div>    
+    </div>
+</div>
+<input type="button" id="pre-order" value="先序遍历">
+<input type="button" id="in-order" value="中序遍历">
+<input type="button" id="post-order" value="后序遍历">
+<input type="button" id="reset" value="重置">
+</body>
+</html>
